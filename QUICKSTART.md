@@ -126,6 +126,40 @@ Key elements:
 - `displayname`: Display name for documentation
 - Field `type`: `string`, `number`, `entityreference`, `owner`, etc.
 
+## Best Practices
+
+### Start Small, Test First
+
+**DO THIS:**
+1. Create Excel with **only a few rows** (5-10 test records)
+2. Run converter and verify output looks correct
+3. Once everything works, add more data
+
+**WHY:**
+- Large Excel files (1000+ rows) are slow to open and edit
+- Easier to debug issues with small test datasets
+- Can catch schema/format errors early
+- Once structure is validated, scale up
+
+### Example Workflow
+
+```bash
+# Step 1: Start with minimal data
+# Create: inputs/myproject/test.xlsx (10 rows)
+python -m src.converter
+
+# Step 2: Check output
+# Review: outputs/data.xml
+# Verify: Contacts, relationships, fields look right
+
+# Step 3: Scale up
+# Replace: test.xlsx with full_data.xlsx (1000+ rows)
+python -m src.converter
+
+# Step 4: Run tests
+python -m pytest tests/ -v
+```
+
 ## Troubleshooting
 
 **"Project directory not found"**
@@ -149,6 +183,11 @@ Key elements:
 - Check `COLUMNS_TO_KEEP` configuration
 - Verify column names match Excel headers (case-sensitive)
 - Remove disabled entities from `COLUMNS_TO_KEEP`
+
+**Excel file slow to open (1000+ rows)**
+- This is normal with large datasets
+- Use approach above: Start with small test file first
+- Once verified, replace with full dataset
 
 ## Testing with Sample Data
 

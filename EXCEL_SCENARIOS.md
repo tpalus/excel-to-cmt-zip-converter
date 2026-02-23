@@ -421,12 +421,16 @@ Solution:
 - Test with simple relationships first
 - Verify schema defines the relationship correctly
 - Check primary keys match between tables
+- **Start with small test file (5-10 rows) before using large datasets**
+- **Validate output looks correct on small data first**
+- **Then scale to full dataset (1000+ rows) once structure is verified**
 
 ❌ **DON'T:**
 - Mix relationship types in one table
 - Use spaces in table/column names
 - Include extra columns in M2M tables
 - Skip the `_entityreference` column for polymorphic lookups
+- Attempt to debug 1000+ row files - use small test set first
 
 ---
 
