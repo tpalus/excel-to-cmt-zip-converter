@@ -44,7 +44,8 @@ venv.bak/
 # Project specific
 inputs/*/
 !inputs/test_project/
-outputs/
+outputs/*
+!outputs/README.md
 *.xlsx
 *.xml
 *.zip
