@@ -268,12 +268,25 @@ python -m pytest tests/
 
 ## License
 
-[Add your license here]
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+
+**MIT License Summary:**
+- ✅ Free to use, modify, and distribute
+- ✅ Commercial and private use allowed
+- ⚠️ Must include license and copyright notice
+
+Copyright (c) 2026 Timotej Palus
 
 ## Contributing
 
-[Add contribution guidelines]
+Contributions are welcome! Please feel free to:
+- Report issues
+- Suggest improvements
+- Submit pull requests
 
 ## Support
 
-For issues and questions, please [add contact/issue tracking info].
+For issues and questions:
+- Check [QUICKSTART.md](QUICKSTART.md) for common setup issues
+- Review [EXCEL_SCENARIOS.md](EXCEL_SCENARIOS.md) for advanced examples
+- See [TESTING.md](TESTING.md) for testing and validation
