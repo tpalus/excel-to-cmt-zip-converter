@@ -9,7 +9,7 @@ from typing import Dict, List
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Default project settings
-DEFAULT_PROJECT = "project1"
+DEFAULT_PROJECT = "test_project"
 
 # Input/Output paths
 INPUT_DIR = BASE_DIR / "inputs"
@@ -21,11 +21,10 @@ OUTPUT_DIR = BASE_DIR / "outputs"
 # Prefixed with '-' = exclude these columns
 # Otherwise = include only specified columns
 COLUMNS_TO_KEEP: Dict[str, List[str]] = {
+    # Leave empty {} to include all entities with all columns
+    # Or specify selectively:
     # 'account': [],
     # 'contact': [],
-    # 'phonecall': [],
-    # 'partylist_phonecall': [],
-    # Add your entities here
 }
 
 # File names

@@ -66,7 +66,8 @@ class ExcelLoader:
         Args:
             tables: Dictionary of DataFrames
             columns_to_keep: Dict mapping entity names to list of columns
-                           Empty list = all columns
+                           Empty dict {} = include all entities with all columns
+                           Empty list [] = include entity with all columns
                            Columns starting with '-' = exclude those
                            Otherwise = include specified columns only
             from_safe_str_func: Function to convert values to strings
@@ -75,14 +76,18 @@ class ExcelLoader:
             Filtered dictionary of DataFrames
         """
         filtered = {}
+        include_all = not columns_to_keep  # True if dict is empty
 
         for entity_name, df in tables.items():
-            if entity_name not in columns_to_keep:
+            # Skip only if columns_to_keep is specified AND entity not in it
+            if not include_all and entity_name not in columns_to_keep:
                 print(f"Skipping entity '{entity_name}' not in columns_to_keep")
                 continue
 
             pk_col = f"{entity_name}id"
-            spec = columns_to_keep[entity_name]
+            
+            # Get specification for this entity
+            spec = columns_to_keep.get(entity_name, []) if columns_to_keep else []
 
             # Determine which columns to keep
             if not spec:
