@@ -26,15 +26,17 @@ excel-to-cmt-zip-converter/
 │   ├── utils.py                  # Utility functions
 │   └── xml_generator.py          # XML generation
 ├── inputs/                        # Input data directory
-│   └── pct24008/                 # Project folder
-│       ├── [PCT24008-Klett] - Prepared for Conversion.xlsx
-│       └── data_schema.xml
-├── outputs/                       # Output directory
-│   ├── data.xml
-│   └── data.zip
-├── tests/                         # Test files
-├── requirements.txt               # Python dependencies
+│   ├── test_project/             # ✅ Test data (included)
+│   │   ├── inputdata.xlsx
+│   │   └── data_schema.xml
+│   └── your_project/             # ➕ Create for your data
+├── outputs/                       # Output directory (auto-created)
+│   ├── data.xml                  # Converted XML
+│   └── data.zip                  # Packaged archive
+├── tests/                         # Test files & fixtures
 ├── .gitignore                    # Git ignore rules
+├── requirements.txt               # Python dependencies
+├── setup.py                      # Package setup
 └── README.md                     # This file
 ```
 
@@ -61,6 +63,28 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 3. Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
+
+4. Create your project folder in `inputs/`:
+```bash
+mkdir inputs/your_project
+```
+
+### Folder Structure After Clone
+
+```
+excel-to-cmt-zip-converter/
+├── inputs/
+│   ├── test_project/          # ✅ Comes with test data (for testing)
+│   │   ├── inputdata.xlsx
+│   │   └── data_schema.xml
+│   └── your_project/          # ➕ Create this for your data
+│       ├── your_data.xlsx
+│       └── data_schema.xml
+├── outputs/                   # Created automatically, stores results
+│   ├── data.xml              # Generated XML output
+│   └── data.zip              # Generated ZIP archive
+└── [other files]
 ```
 
 ## Usage

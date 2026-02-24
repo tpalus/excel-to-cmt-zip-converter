@@ -42,11 +42,17 @@ venv.bak/
 *.sublime-workspace
 
 # Project specific
-inputs/
+inputs/*/
+!inputs/test_project/
 outputs/
 *.xlsx
 *.xml
 *.zip
+!inputs/test_project/*.xlsx
+!inputs/test_project/*.xml
+!tests/fixtures/*.xml
+!tests/fixtures/test_project/*.xlsx
+!tests/fixtures/test_project/*.xml
 
 # Jupyter Notebook
 .ipynb_checkpoints

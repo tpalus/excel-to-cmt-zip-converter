@@ -1,0 +1,107 @@
+<entities >
+  <entity name="contact" displayname="Contact" etc="2" primaryidfield="contactid" primarynamefield="fullname" disableplugins="true">
+    <fields>
+      <field displayname="Company Name" name="parentcustomerid" type="entityreference" lookupType="account|contact" />
+      <field displayname="Last Name" name="lastname" type="string" />
+      <field updateCompare="true" displayname="Contact" name="contactid" type="guid" primaryKey="true" />
+      <field displayname="Do not allow Bulk Emails" name="donotbulkemail" type="bool" />
+      <field displayname="Do not allow Emails" name="donotemail" type="bool" />
+      <field displayname="Do not allow Mails" name="donotpostalmail" type="bool" />
+      <field displayname="Do not allow Phone Calls" name="donotphone" type="bool" />
+      <field displayname="Email" name="emailaddress1" type="string" />
+      <field displayname="First Name" name="firstname" type="string" />
+      <field displayname="Full Name" name="fullname" type="string" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+    </fields>
+    <relationships>
+      <relationship name="ntg_contact_ntg_sportcategory" manyToMany="true" isreflexive="false" relatedEntityName="ntg_contact_ntg_sportcategory" m2mTargetEntity="ntg_sportcategory" m2mTargetEntityPrimaryKey="ntg_sportcategoryid" />
+    </relationships>
+  </entity>
+  <entity name="appointment" displayname="Schůzka" etc="4201" primaryidfield="activityid" primarynamefield="subject" disableplugins="true">
+    <fields>
+      <field displayname="(Deprecated) Process Stage" name="stageid" type="guid"/>
+      <field displayname="(Deprecated) Traversed Path" name="traversedpath" type="string"/>
+      <field displayname="Activity Type" name="activitytypecode" type="string"/>
+      <field displayname="Actual Duration" name="actualdurationminutes" type="number"/>
+      <field displayname="Actual End" name="actualend" type="datetime"/>
+      <field displayname="Actual Start" name="actualstart" type="datetime"/>
+      <field displayname="All Day Event" name="isalldayevent" type="bool"/>
+      <field updateCompare="true" displayname="Appointment" name="activityid" type="guid" primaryKey="true"/>
+      <field displayname="Appointment Type" name="instancetypecode" type="optionsetvalue"/>
+      <field displayname="Attachment Count" name="attachmentcount" type="number"/>
+      <field displayname="AttachmentErrors" name="attachmenterrors" type="optionsetvalue"/>
+      <field displayname="Category" name="category" type="string"/>
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser"/>
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser"/>
+      <field displayname="Created On" name="createdon" type="datetime"/>
+      <field displayname="Currency" name="transactioncurrencyid" type="entityreference" lookupType="transactioncurrency"/>
+      <field displayname="Description" name="description" type="string"/>
+      <field displayname="Duration" name="scheduleddurationminutes" type="number"/>
+      <field displayname="End Time" name="scheduledend" type="datetime"/>
+      <field displayname="Exchange Rate" name="exchangerate" type="decimal"/>
+      <field displayname="File Control" name="talxis_filecontrol" type="string" customfield="true"/>
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number"/>
+      <field displayname="Is Billed" name="isbilled" type="bool"/>
+      <field displayname="Is Online Meeting" name="isonlinemeeting" type="bool" customfield="true"/>
+      <field displayname="Is Private" name="ismapiprivate" type="bool"/>
+      <field displayname="Is Regular Activity" name="isregularactivity" type="bool"/>
+      <field displayname="Is Workflow Created" name="isworkflowcreated" type="bool"/>
+      <field displayname="Last On Hold Time" name="lastonholdtime" type="datetime"/>
+      <field displayname="Last SLA applied" name="slainvokedid" type="entityreference" lookupType="sla"/>
+      <field displayname="Location" name="location" type="string"/>
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser"/>
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser"/>
+      <field displayname="Modified Fields Mask" name="modifiedfieldsmask" type="string"/>
+      <field displayname="Modified On" name="modifiedon" type="datetime"/>
+      <field displayname="On Hold Time (Minutes)" name="onholdtime" type="number"/>
+      <field displayname="Online Meeting Chat Id" name="onlinemeetingchatid" type="string" customfield="true"/>
+      <field displayname="Online Meeting Id" name="onlinemeetingid" type="string" customfield="true"/>
+      <field displayname="Online Meeting Join Url" name="onlinemeetingjoinurl" type="string" customfield="true"/>
+      <field displayname="Online Meeting Type" name="onlinemeetingtype" type="optionsetvalue" customfield="true"/>
+      <field displayname="Optional Attendees" name="optionalattendees" type="partylist"/>
+      <field displayname="Organizer" name="organizer" type="partylist"/>
+      <field displayname="Original Start Date" name="originalstartdate" type="datetime"/>
+      <field displayname="Outlook Appointment" name="globalobjectid" type="string"/>
+      <field displayname="Outlook Appointment Owner" name="outlookownerapptid" type="number"/>
+      <field displayname="Owner" name="ownerid" type="owner"/>
+      <field displayname="Owner Principal" name="talxis_ownerprincipalid" type="entityreference" lookupType="talxis_accessprincipal" customfield="true"/>
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit"/>
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team"/>
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser"/>
+      <field displayname="Priority" name="prioritycode" type="optionsetvalue"/>
+      <field displayname="Process" name="processid" type="guid"/>
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime"/>
+      <field displayname="Regarding" name="regardingobjectid" type="entityreference" lookupType="account|adx_invitation|contact|knowledgearticle|knowledgebaserecord|mspp_adplacement|mspp_pollplacement|mspp_publishingstatetransitionrule|mspp_redirect|mspp_shortcut|mspp_website|talxis_booking|talxis_bookingstatusupdate|talxis_businesspartnership|talxis_contract|talxis_contractreviewcomment|talxis_document|talxis_event|talxis_lead|talxis_opportunityheader|talxis_portalpage|talxis_project|talxis_projectdetail|talxis_salesorderheader|talxis_salesquoteheader"/>
+      <field displayname="Remove Product Button Bind" name="ntg_removeproductbuttonbind" type="string" customfield="true"/>
+      <field displayname="Required Attendees" name="requiredattendees" type="partylist"/>
+      <field displayname="SLA" name="slaid" type="entityreference" lookupType="sla"/>
+      <field displayname="Sort Date" name="sortdate" type="datetime"/>
+      <field displayname="Start Time" name="scheduledstart" type="datetime"/>
+      <field displayname="Status" name="statecode" type="state"/>
+      <field displayname="Status Reason" name="statuscode" type="status"/>
+      <field displayname="Sub-Category" name="subcategory" type="string"/>
+      <field displayname="Subject" name="subject" type="string"/>
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number"/>
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number"/>
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="account" displayname="Organizace" etc="1" primaryidfield="accountid" primarynamefield="name" disableplugins="false">
+    <fields>
+      <field displayname="Obchodní vztah" name="accountid" type="guid" primaryKey="true" />
+      <field displayname="E-mail" name="emailaddress1" type="string" />
+      <field displayname="Stav" name="statecode" type="state" />
+      <field displayname="Důvod stavu" name="statuscode" type="status" />
+      <field displayname="Název" name="name" type="string" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="ntg_sportcategory" displayname="Sportovní kategorie" etc="1" primaryidfield="ntg_sportcategoryid" primarynamefield="ntg_name" disableplugins="false">
+    <fields>
+      <field displayname="Obchodní vztah" name="ntg_sportcategoryid" type="guid" primaryKey="true" />
+      <field displayname="Název" name="ntg_name" type="string" />
+    </fields>
+    <relationships />
+  </entity>
+</entities>
